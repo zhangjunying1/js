@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	var a=10,b=20,c=30;
+	alert(a);
+	alert(b);
+	alert(c);
+
+	var num1 = 43;
+	var num2 = 40;
+	var info = "我们班有两个班组成，第一个班505班有" + num1 + "人，第二个班507班有" + num2 + "人，总共有" + (num1 + num2) + "人";
+	console.log(info);
+
+	var a=10;
+	// alert(++true);//报错
+	// alert(++1);//报错
+	// alert(c++);//NAN (NOT A NUMBER)
+	var c=10;
+	alert(++c);//11
+	alert(++c+2);//14
+	alert(c++);//12
+	alert(c);//13
+
+	//模板字符串
+	var num1 = 43;
+	var num2 = 40;
+	var info = `我们班有两个班组成，第一个班505班有${num1}人，第二个班507班有${num2}人，总共有 ${num1 + num2}人`;
+	console.log(info);
+
+	var num = 10 , num1 = 20;
+    alert(num > num1);//false
+    alert(num < num1);//true
+    alert(num <= 20);//true
+    alert(num == '10');//true
+    alert(1 == '1');//true
+    alert(1 == true);//true 两个等号会比较数值大小
+    alert(1 === true);//flase 三个等号会比较数值大小和数据类型
+    alert(num != num1);//true
+
+    var str = 'aaa' , str1 = 'b';
+	alert(str < str1);//比较的是首字母的ASCII要是第一个字母相等会向后进行比较
+
+	var num = '10' , num1 = '2';
+	alert(num < num1);//true
+
+	var num = '10' , num1 = 2;
+	alert(num < num1);//true
+
+	var num = 10 , num1 = '2px';
+	alert(num < num1);//数字和字符串不能进行比较没有结果
+
+	alert(undefined==null);//true
+	
+	alert(true == 'true');
+	
+	var str = 'abhh' , str1 = 'abgg';
+	alert(str > str1);//true
+
+	var num = 10 ,num1 = 20;
+	console.log( num && num1);//20
+	console.log( num1 && num);//10
+	console.log( 0 && num1);//0
+	console.log( undefined && num1);//undefined
+	console.log( num1 && null);//null
+	console.log( undefined && null);//undefined
+	console.log( undefined && num++);//undefined num短路了不执行num++
+	console.log(num);//10
+    console.log( num++ && undefined);//undefined
+	console.log(num);//11
+
+	var num2 = 10;
+	console.log( 0 || null); //null
+	console.log( null || 0); //0
+	console.log( null || num2++); //10
+	console.log(null); //null
+	console.log( 5 || num2++); //5
+	console.log( num2 ); //11
+
+	console.log(!true);//false
+	console.log(!num2);//false
+	console.log(!false);//true
+
+	//根据条件 选择性的对flag进行赋值
+	var num=10;
+	var flag;
+	    flag = num%2==0? true : false;
+	console.log(flag);
+	if(num%2 == 0){
+		flag = true;
+	}
+	else{
+		flag = flase;
+	}
+	console.log(flag);
+
+
+	var num = prompt('请输入值',0);
+	 if(num > 0){
+	 	alert(true);
+	 }
+	else{
+		alert(false);
+	}
+
+	var score = prompt('请输入你的成绩',60);
+	if(score >= 90 && score <= 100){
+		alert('优秀');
+	}
+	else if(score >= 80 && score < 90){
+		alert('良好');
+	}
+	else if(score >= 70 && score < 80){
+		alert('中等');
+	}
+	else if(score >= 60 && score < 70){
+		alert('及格');
+	}
+	else if(score >= 0 && score < 60){
+		//alert('不及格');
+		if(score >= 50){
+			alert('努力一点');
+		}
+		if(score >= 30 && score < 50){
+			alert('再多努力一点');
+		}
+		else{
+			alert('需要别人帮助，更多努力');
+		}
+	}
+	else{
+		alert('输入错误');
+	}
+
+</script>
+
+<script>
+	var week = prompt('请输入星期',1);
+	switch(week){
+		case '1':
+		  alert('一组');
+		  break;
+		case '2':
+		  alert('二组');
+		  break;
+		case '3':
+		  alert('三组');
+		  break;
+		case '4':
+		  alert('四组');
+		  break;
+		case '5':
+		  alert('五组');
+		  break;
+		case '6':
+		  alert('六组');
+		  break
+		case '7':
+		  alert('七组');
+		  break;
+		default:
+		  alert('输入错误');
+		}
+</script>
+
+<script>
+	for(var j=1;j<=10;j++){
+			for(var i=1;i<11;i++){
+				document.write('*');
+			}
+			document.write('<br/>')
+		}
+		for(var j=1;j<=10;j++){
+			for(var i=1;i<j;i++){
+				document.write('*');
+			}
+			document.write('<br/>')
+		}
+
+	var row = prompt("请输入行数",0);
+	for(var i=1;i<=row;i++){
+		for(var j=1;j<=row-i;j++){
+			document.write('_');
+		}
+		for(var j=1;j<=2*i-1;j++){
+			document.write('*');
+		}
+		document.write('<br/>')
+	}
+</script>
+
+<script>
+	document.write('<table border=1 cellspacing = "0">');
+		  for(var x=1;x<11;x++){
+		  	document.write('<tr>')
+		  	  for(var y=1;y<11;y++){
+		  	  	document.write('<td>'+x+'*'+y+'='+x*y+'</td>');
+		  	  }
+		  	document.write('</tr>')
+		  }
+		document.write('</table>');
+
+		document.write('<table border=1 cellspacing = 0>');
+		for(var x=1;x<11;x++){
+		  	if(x%2==0){
+		  	  document.write('<tr bgcolor="red">')
+		  	  for(var y=1;y<=x;y++){
+		  	  	document.write('<td>'+y+'*'+x+'='+(x*y)+'</td>');
+		  	  }	
+		  	document.write('</tr>');
+		  	}
+		  	else{
+		  		document.write('<tr bgcolor="green">')
+		  		for(var y=1;y<=x;y++){
+		  	  	document.write('<td>'+y+'*'+x+'='+(x*y)+'</td>');
+		  	  }	
+		  	document.write('</tr>');
+		  	}		  	
+		}
+	document.write('</table>');
+
+	document.write('<table border=1 cellspacing = 0>');
+		for(var x=1;x<11;x++){
+		  	document.write('<tr>')
+		  	  for(var y=1;y<=x;y++){
+		  	  	if(y%2==0){
+		  	  		document.write('<td bgcolor="red">'+y+'*'+x+'='+(x*y)+'</td>');
+		  	  	}
+		  	  	else{
+		  	  		document.write('<td bgcolor="green">'+y+'*'+x+'='+(x*y)+'</td>');
+		  	  	}
+		  	  }
+		  	document.write('</tr>')
+		}
+	document.write('</table>');
+
+	var table = '<table border=1 cellspacing=0>';
+
+	for(var i=1;i<11;i++){
+		table += '<tr>';
+		for(var j=1;j<11;j++){
+			table += '<td>'+i+'-'+j+'</td>';
+		}
+		table += '</tr>';
+	}
+	document.write(table);
+</script>
+
+<script>
+    var i=1,j=1;
+	document.write(i+'&nbsp;');
+	document.write(j+'&nbsp;');
+	for(var k=0;k<=60;){
+		k = i + j;
+		document.write(k+'&nbsp;');
+		i = j;
+		j = k;
+	}
+</script>
+
+<script>
+	var zhangsan = [90 , 95 ,80];
+	document.write(zhangsan);
+	console.log(zhangsan[0]);//访问数组的第一个元素
+	console.log(zhangsan.length);
+	console.log(zhangsan[zhangsan.length-1]);
+	zhangsan[1] = 60;//将数组的第二个元素改为60
+	console.log(zhangsan[1]);
+
+	zhangsan[9]=89;
+	console.log(zhangsan);
+	//数组元素可以是任何类型的数据，长度不限，如果数据没有写入默认为undefined
+	//遍历数组
+	for(var i = 0; i < zhangsan.length;i++){
+		console.log(zhangsan[i]);
+	}
+
+	var arr = [29,9,34,78,23,188,70];
+
+	var max=arr[0];
+	for(var i=0;i<arr.length;i++){
+	 	if(max < arr[i]){
+	 		max = arr[i];
+	 	}
+	}
+	console.log(max);
+
+	var min=arr[0];
+	for(var i=0;i<arr.length;i++){
+		if(min > arr[i]){
+			min = arr[i];
+		}
+	}
+	console.log(min);
+
+	for(var i=0;i<arr.length;i++){
+		for(var j=i+1;j<arr.length;j++){
+			if(arr[i]<arr[j]){
+				var temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	console.log(arr);
+
+	for(var i=0;i<arr.length;i++){
+		for(var j=i+1;j<arr.length;j++){
+			if(arr[i]>arr[j]){
+				var temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	console.log(arr);
+</script>
+
+<script>
+	var i=1;
+	while(i<=10){
+		console.log(i);
+		i++;
+	}
+
+	var sum = 0 , i = 1;
+	while(i<=10){
+	 	sum += i;
+	 	i++;
+	}
+	console.log(sum);
+
+	var sum = 0 , i = 1;
+	do{
+		sum += i;
+		i++;
+	}while(i<=10)
+	console.log(sum);
+
+	for(var i = 0;i<=10;i++){
+		if(i%2==0){
+			continue;
+			//break;
+		}
+		console.log(i);
+	}
+</script>
+
+<script>
+	var zhangsan = [80,90,75];
+	var lisi = [85,76,70];
+	var wangwu = [80,65,75];
+
+	var classes = [zhangsan,lisi,wangwu];
+	console.log(classes[1][2]);
+	var classes1 = [
+	              [80,90,75],
+	              [85,76,70],
+	              [80,65,75]
+	               ];
+	for(var i=0;i<classes1.length;i++){
+		for(var j=0;j<classes1.length;j++){
+			console.log(classes1[i][j]);
+		}
+	}
+	var max = classes1[0][0];
+	for(var i=0;i<classes1.length;i++){
+		for(var j=0;j<classes1[i].length;j++){
+		    if(max<classes1[i][j]){
+		    	max=classes1[i][j];
+		    }
+		}
+	}
+	console.log(max);
+
+</script>
+
+<script>
+    //数组去掉空的地方
+	var arr = [1,2,3,4,,5,6,,7,,8,,] 
+	var newarr = [];
+	for(var i = 0;i < arr.length;i ++){
+		if(arr[i] != undefined){
+			newarr[newarr.length] = arr[i];
+		}
+	}
+	console.log(newarr);
+</script>
+
+<script>
+    //数组去掉空的地方
+	var arr = [1,2,3,4,,5,6,,7,,8,,] 
+	var newarr = [];
+	for(var i = 0;i < arr.length;i ++){
+		if(arr[i] == undefined){
+			continue;
+		}
+		else{
+			newarr[newarr.length]=arr[i];
+		}
+	}
+	console.log(newarr);
+</script>
+
+<script>
+    //数组去掉空的地方
+	var arr = [1,2,3,4,,5,6,,7,,8,,] 
+	var newarr = [];
+	for(var i = 0;i < arr.length;i ++){
+		if(typeof arr[i] != 'undefined'){
+			newarr[newarr.length]=arr[i];
+		}
+	}
+	console.log(newarr);
+</script>
+
+<script>
+	//功能 代码段  复用   =>函数
+	//定义函数
+	//实现任意行任意列->函数体变量 ->形参（row，cols）->实参
+	table(10,10);//调用函数
+	table(5,6);
+	function table(row,cols){
+	 document.write('<table border=1 cellspacing=0>');
+	 for(var i=1;i<=row;i++){
+		document.write('<tr>');
+		for(var j=1;j<=cols;j++){
+			document.write('<td>'+i+'*'+j+'</td>');
+		}
+		document.write('</tr>');
+	}
+	document.write('</table>');
+	}
+</script>
+
+<script>	
+   //自变量   字面量
+   var fn = function(){
+   	alert(1);
+   }
+   var fn = function(){
+   	alert(3);
+   }
+   fn();
+</script>

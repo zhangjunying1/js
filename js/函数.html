@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+    //由小到大排序
+    arr1 = [18,78,55,67,90,34];
+    order(arr1);
+    function order(arr){
+    	for(var i=0;i<arr.length;i++){
+		  for(var j=i+1;j<arr.length;j++){
+			if(arr[i]>arr[j]){
+				var temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		  }
+	    }
+	  console.log(arr);
+    }
+</script>
+
+<script>
+  //正三角形
+ an(5);
+  function an(row){
+  	for(var i=1;i<=row;i++){
+		for(var j=1;j<=row-i;j++){
+			document.write('_');
+		}
+		for(var j=1;j<=2*i-1;j++){
+			document.write('*');
+		}
+		document.write('<br/>')
+	}
+  }
+</script>
+
+<script>
+    //去掉空格
+    var arr = [1,2,3,4,,5,6,,7,,8,,];
+    arrn(arr);
+    function arrn(arr1){
+       var newarr = [];
+	   for(var i = 0;i < arr1.length;i ++){
+		  if(arr1[i] != undefined){
+			newarr[newarr.length] = arr1[i];
+		  }
+	   }
+	console.log(newarr);    	
+    }	
+</script>
+
+<script>
+    //任意行任意列的乘法表
+    table(6);
+    function table(row){
+    	document.write('<table border=1 cellspacing = 0>');
+		for(var x=1;x<=row;x++){
+		  document.write('<tr>')
+		  for(var y=1;y<=x;y++){
+		  	document.write('<td>'+y+'*'+x+'='+(x*y)+ '</td>');
+		  }
+		  document.write('</tr>')
+		}
+	document.write('</table>');
+    }
+</script>
+
+<script>
+	//实现任意行任意列的表格
+	table1(10,5);
+	table1(5,7);
+	function table1(row,cols){
+	   document.write('<table border=1 cellspacing=0>');
+	   for(var i=1;i<=row;i++){
+		  document.write('<tr>');
+		  for(var j=1;j<=cols;j++){
+			document.write('<td>'+i+'*'+j+'</td>');
+		   }
+		document.write('</tr>');
+	   }
+	document.write('</table>');
+    }
+</script>
+
+<script>
+    //求二维数组的最大值
+    var arry = [
+	              [80,90,75],
+	              [85,76,70],
+	              [95,65,75]
+	           ];
+    maxArry(arry);
+    function maxArry(name){
+    	var max = name[0][0];
+	    for(var i=0;i<name.length;i++){
+		  for(var j=0;j<name[i].length;j++){
+		    if(max<name[i][j]){
+		    	max=name[i][j];
+		    }
+		  }
+	    }
+	    console.log(max);
+    }	
+</script>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	(function fn(){
+		alert('123');
+	})()
+</script>
+
+<script>
+	//一维数组求最大值
+	function max(arr){
+		var num = arr[0];
+		for(var i = 0;i<arr.length;i++){
+			if(num < arr[i]){
+				num = arr[i];
+			}
+		}
+		console.log(num);
+	}
+	max([12,3,4,5,887]);
+	var arr = [10,78,66,70];
+	max(arr);
+</script>
+
+<script>
+    /* 判断数组存在某一特定的值，存在true，不存在false */
+	function exsit(arr,value){
+		// arr必须是数组  arguments输入的参数个数必须大于1
+		if(!(typeof arr == 'object'&& arguments.length>1)){
+			return '输入错误';
+		}
+		for(var i = 0;i<arr.length;i++){
+			if(arr[i] == value){
+				return true;
+			}
+		}
+		return false;
+	}
+	arr1 = [10,34,7,3,67];
+	var result = exsit(arr1);
+	alert(result);
+</script>
+
+<script>
+	var fn = function (value){
+		console.log(value);
+	}
+	fn(fn);//输出来的是函数
+
+	var fn = function (i,j,k){
+		console.log(i,j,k);
+	}
+	fn(1,2);//1 2 undefined
+
+	var fn = function (){
+
+		console.log(arguments);//arguments 每个函数内部都有 用来保存函数只能在函数内部调用
+		console.log(arguments.length);
+	}
+	fn(1,2,3,4,5,6,7,8,9);//1 2 3
+
+
+	/*在数组的后面添加任意个数组元素*/
+	var arr = [1,2,3,4,5,6,7,8,9];	
+	function push(arr){
+		console.log(arguments);
+		for(var i = 1; i < arguments.length ; i++){
+			arr[arr.length] = arguments[i];
+		}
+		console.log(arr);
+	}
+	function push(arr,...value){
+		for(var i = 0; i < value.length ; i++){
+			arr[arr.length] = value[i];
+		}
+		console.log(arr);
+	}
+	push(arr,'a','b','c')
+</script>
+
+<script>
+    //方法一：
+    function sort(arr,type){
+    	if(type == undefined){
+    		sortDown(arr);
+    	}
+    	if(type == '<'){
+    		sortDown(arr);
+    	}
+    	else if(type == '>'){
+    		sortUp(arr);
+    	}
+    }
+    //方法二：
+    function sort(arr,type){
+    	if(type == undefined){
+    		type = '<';
+    	}
+    	if(type == '<'){
+    		sortDown(arr);
+    	}
+    	else if(type == '>'){
+    		sortUp(arr);
+    	}   	
+    }
+    //方法三：
+    function sort(arr,type){
+    	type = type==undefined?'<':type;
+    	if(type == '<'){
+    		sortDown(arr);
+    	}
+    	else if(type == '>'){
+    		sortUp(arr);
+    	}
+    }
+    
+    //方法四：
+    function sort(arr,type){
+    	type = type || '<';
+    	if(type == '<'){
+    		sortDown(arr);
+    	}
+    	else if(type == '>'){
+    		sortUp(arr);
+    	}
+    }
+    //方法五:
+    function sort(arr,type = '<'){
+    	if(type == '<'){
+    		sortDown(arr);
+    	}
+    	else if(type == '>'){
+    		sortUp(arr);
+    	}
+    }
+
+	function sortUp(arr){
+    	for(var i=0;i<arr.length;i++){
+		  for(var j=i+1;j<arr.length;j++){
+			if(arr[i]>arr[j]){
+				var temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		  }
+	    }
+	  console.log(arr);
+    }
+
+    function sortDown(arr){
+    	for(var i=0 ; i<arr.length;i++){
+		  for(var j=i+1;j<arr.length;j++){
+			if(arr[i]<arr[j]){
+				var temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		  }
+	    }
+	  console.log(arr);
+    }
+
+    arr1 = [18,78,55,67,90,34];
+    sort(arr1);
+</script>
