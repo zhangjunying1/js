@@ -31,7 +31,7 @@ function join(arr,str){
    	return result;
 }
 
-//筛选数组里面偶数的数组元素  filter()
+//筛选数组里面奇数的数组元素  filter()
 function filter(arr,fn){
 	var newarr = [];
 	for(var i=0;i<arr.length;i++){
