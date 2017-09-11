@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内置  顶层  函数</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	/*escape()  unescape()  Number()  String()
+	  Boolean()  parseInt()  parseFloat()  isNaN()
+	*/
+    let str = '张三';
+    console.log(escape(str));//编码
+    console.log(unescape('张三'));//解码
+
+    //只有数字型的字符串才可以转化成数字
+    console.log(Number(true));//1
+    console.log(Number(false));//0
+    console.log(Number(null));//0
+    console.log(Number(undefined));//NaN
+    console.log(Number(0b1111));//15
+    console.log(Number('123'));//转化成数字类型的123
+    console.log(Number('00123'));//转化成数字类型的123 里面无意义的0去掉
+    console.log(Number(123.00));//123
+    console.log(Number(0123));//转化成数字类型的83  0123八进制
+    console.log(Number('0123.01.2'));//NAN
+    console.log(Number('123px'));//NAN
+    console.log(Number('abcd'));//NAN
+    console.log(Number('true'));//NAN
+
+    console.log(String('true'));//true
+
+    console.log(Boolean(''));//false
+    console.log(Boolean(NaN));//false
+    console.log(Boolean(null));//false
+    console.log(Boolean(undefined));//false
+    console.log(Boolean(0));//false
+    console.log(Boolean(false));//false
+    console.log(Boolean([]));//true
+
+    //parseInt()字符串转化成整数
+    //规则：以空格，+,-第一个数字字符开始到第一个非数字字符结束
+    console.log(parseInt('1234'));//1234
+    console.log(parseInt('0b1111'));//0
+    console.log(parseInt('100px200'));//100
+    console.log(parseInt('  -1.00px200'));//-1
+    console.log(parseInt('abcd100px200'));//NaN
+
+    //parseFloat()字符串转化成小数
+    console.log(parseFloat('100.5px'));//100.5
+    console.log(parseFloat('1005px'));//1005
+
+    //isNaN()
+    console.log(isNaN(false));//false
+    console.log(isNaN('abcd'));//true
+    
+    var num = 11;
+    if(num%2){
+    	alert(true);
+    }
+
+    var num = 10;
+    if(num){
+    	num = num;
+    }
+    else{
+    	num = 'x';
+    }
+    alert(num);
+
+    //num == undefined ? 'x': num;
+   // num ? num : 'x';*
+</script>
+
+<script>
+    //创建对象
+    //方法一、json
+	/*let zhangsan = {}
+	console.log(typeof zhangsan);*/
+
+	//方法二、构造函数的方式创建函数
+	/*function Person(){
+
+	}
+	let zhangsan = new Person();
+	let lisi = new Person();
+	//console.log(typeof lisi);
+	//添加属性  方法
+	//谁    什么  等于
+	zhangsan.age = 20;
+	zhangsan.name = 'zhangsan';
+	//访问
+	//谁  什么
+	console.log(zhangsan.name);
+	console.log(zhangsan.age);*/
+</script>
+
+<script>
+	function Person(){
+
+	}
+
+	let zhangsan = new Person();
+	let lisi = new Person();
+	zhangsan.age = 20;
+	zhangsan.name = 'zhangsan';
+	zhangsan.sex = '男';
+	zhangsan.height = '180cm';
+	zhangsan.say = function(){
+		alert(zhangsan.name);
+	}
+
+	lisi.age = 20;
+	lisi.name = 'zhangsan';
+	lisi.sex = '男';
+	lisi.height = '180cm';
+	lisi.classes = 'wuif1707-1';
+
+	zhangsan.say();
+	console.log(zhangsan.height);
+	console.log(zhangsan.sex);
+	console.log(zhangsan.name);
+	console.log(zhangsan.age);
+</script>

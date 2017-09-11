@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="9.9.js"></script>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	var arr1 = [1,5,60,74,60,43,60];
+	var result = indexof(arr1,60);
+	console.log(result);
+
+	var result1 = lastindexof(arr1,60);
+	console.log(result1);
+
+	var arr2 = [1,2,3,4,5];
+	var result1 = reverse(arr2);
+	console.log(result1);
+</script>
+
+<script>
+	var arr = [2,4,45,8,9,10];
+	console.log(splicedelete(arr,3,3));
+	console.log(spliceAdd(arr,1,'x','y','z'));
+	console.log(spliceAdd1(arr,2,'a','b','c'));
+	console.log(splice(arr,2,2,'a','b','c','d'));
+</script>
+
+<script>
+	fn(1,2,3);
+	function fn(...rest){
+		console.log(...rest);
+	}
+</script>
+
+<script>
+    var arr = [-1,3,21,0,-9];
+	var result = some(arr,function(value){
+		return value >0;
+	})
+	console.log(result);
+
+	var arr1 = [2,-4,26,-8,90];
+	var result1 = every(arr1,function(value){
+		return value > 0;
+	})
+	console.log(result1);
+</script>
+
+<script>
+    
+    //自己调用自己:递归
+	fn(1);
+	function fn(num){
+		if(num<5){
+			fn(++num);
+		}
+		alert(num);
+	}
+
+	//递归 它不是循环
+	function fn1(){
+		fn2();
+		console.log(1);
+	}
+	function fn2(){
+		fn3();
+		console.log(2);
+	}
+	function fn3(){
+		fn4();
+		console.log(3);
+	}
+	function fn4(){
+		console.log(4);
+	}
+	fn1();
+</script>
+
+<script>
+	var arr = [1,2,3,4,5,6];
+	//地址（浅拷贝）
+	var arr1 = arr;
+	arr1[1] = 'b';
+	arr[3] = 'y';
+	console.log(arr1);
+	console.log(arr);
+	//传值（深拷贝）
+	var arr2 = [];
+	for(var i = 0;i < arr.length;i++){
+		arr2[i] = arr[i];
+	}
+	arr2[1] = 'a';
+	arr[3] = 'x';
+	console.log(arr2);
+	console.log(arr);
+</script>
+
+<script>
+    //将数组拷贝到另一个数组中
+	var arr = [1,2,3,4,5,['x','y','z']];	
+	function copy(arr){
+		var newarr = [];
+		for(var i = 0;i < arr.length;i++){
+			if(typeof arr[i] == 'object'){
+				newarr[i] = copy(arr[i]);
+			}
+			else{
+				newarr[i] = arr[i];
+			}			
+		}
+		return newarr;
+	}
+	var arr1 = copy(arr);
+	arr[1] = 5;	
+	console.log(arr);
+	console.log(arr1);
+</script>
