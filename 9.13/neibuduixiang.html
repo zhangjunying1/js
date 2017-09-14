@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	/*Object
+	String
+	Number
+	Boolean
+	Array
+	Date 
+	RegExp*/
+	let str = 'abcdabcda';
+	console.log(str.length);//str.length只能获取大小，不能对字符串大小进行设置
+	console.log(str.charAt(0));//返回指定位置的字符
+	console.log(str.charCodeAt(0));//返回某一指定位置字符所对应的Unicode值或ASCII值
+	console.log(String.fromCharCode(98));//返回Unicode编码所对应的字符串
+	let index = str.indexOf('abcd');
+	let index1 = str.indexOf('abcd');
+	let index2 = str.lastIndexOf('abcd');
+	let index3 = str.lastIndexOf('abcd0');
+	console.log(index/*0*/,index1/*0*/,index2/*4*/,index3/*-1表示不存在*/);
+	/*function includes(oStr,fStr){
+		let result = oStr.indexOf(fStr);
+		if(result != -1){
+			return true;
+		}
+		return false;
+	}
+	console.log(includes(str,'abci'));*/
+	console.log(str.includes('abcd'));
+
+	let str1 = str.slice(2);
+	let str2 = str.substring(2,4);
+	let str3 = str.substr(2,4);
+	console.log(str1)
+	console.log(str2);
+	console.log(str3);
+
+	let str4 = str.replace('abcd','****');
+	console.log(str4);
+	console.log(str);
+	function replaceAll(str,rStr){
+		/*循环while  条件 存在 rStr
+		存在
+		替换 replace
+		更新
+		返回*/
+		/*let star = '';
+		for(let i = 0;i < rStr.length;i++){
+			star += '*';
+		}*/
+		let star ='*'.repeat(rStr.length);
+		while(str.includes(rStr)){
+			str = str.replace(rStr,star);
+		}
+		return str;		
+	}
+	console.log(replaceAll(str,'bc'));
+
+	let str0 = '   acbdvfh  ';
+	console.log(str0.trim());
+	console.log(str0);
+
+	let str11 = 'a b c d e';
+	console.log(str11.split(' ',3));
+
+	let str12 = 'abcde';
+	let str13 = 'HSFR';
+	console.log(str12.toUpperCase());
+	console.log(str13.toLowerCase());
+	document.write(str13.fontcolor('red'));
+	document.write(str13.fontsize('30px'));
+
+</script>
+
+<script>
+	/*function findl(str,rStr){	
+		let arr = [];
+		let star = '*'.repeat(rStr.length);
+		while(str.includes(rStr)){
+		    arr.push(str.indexOf(rStr));	
+			str = str.replace(rStr,star);
+		}
+		return arr;
+	}
+	let url = 'https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com'
+	console.log(findl(url,'baidu'));*/
+
+
+	/*function position(str,rStr){
+		let arr = [];
+		let arr1 = [];
+		for(let i = 0;i < str.length;i++){  //将str字符串每5个进行截取并且存入arr数组中
+			arr.push(str.substr(i,5));
+		}
+		for(let i = 0;j < arr.length;j ++){//遍历arr数组并且判断arr[j]数组中的元素是否等于对应的字符串
+			if(arr[j] == rStr){
+				arr1.push(j);
+			}
+		}		
+		return arr1;
+	}
+	let url = 'https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com'
+	let result = position(url,'baidu');
+	console.log(result);*/
+
+	function position(str,rStr){
+		let arr = [];
+		for(let i = 0;i < str.length;i++){  //将str字符串每5个进行截取并且存入arr数组中 
+			if(str.substr(i,rStr.length) == rStr){
+				arr.push(i);
+			}
+		}
+		return arr;
+	}
+	let url = 'https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com'
+	let result = position(url,'baidu');
+	console.log(result);
+
+</script>

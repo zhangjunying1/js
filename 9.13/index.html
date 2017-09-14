@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Person(){//构造函数中一般放属性
+		this.name = 'zhangsan';
+		this.age = 20;
+		this.sex = 'nan';
+		this.study = function(){
+			alert('学习');
+		}	
+	}
+
+	function Student(){
+
+	}
+    
+    //原型对象（里面一般放  方法） 每个构造函数里面都有  数据类型是object 通过这个原型对象，可以使方法的地址相同
+	Person.prototype = {  //原型对象：1、使函数结构简单 2、继承、节省空间
+		say : function(){
+			alert(this.name);
+		},
+		play : function(){
+			alert(`${this.name}玩儿`);
+		},
+		sleep : function(){
+			alert('休息');
+		},
+		hobby : '踢足球',
+	}
+	Person.prototype.eat = function(){
+		alert('eat');
+	}
+
+	let zhangsan = new Person();
+	let lisi = new Student();
+
+	console.log( zhangsan instanceof Student);
+	console.log( lisi instanceof Student);//用instanceof判断一个对象是否是某一构造函数实例化出来的
+	// alert(zhangsan.hobby);
+	// lisi.sleep();
+	// zhangsan.sleep();
+	// Person.prototype.sleep();
+	// console.log(zhangsan);
+	// alert(zhangsan.sex);
+	// delete zhangsan.sex;//删除属性
+	// alert(zhangsan.sex);
+	// alert(zhangsan.study());
+	// delete zhangsan.study;//删除方法
+	// alert(zhangsan.study);
+
+	/*console.log(zhangsan.say == lisi.say);//false  地址进行比较，它们的地址不一样所以返回false
+	console.log(zhangsan == lisi);//false
+	console.log(zhangsan.name == lisi.name);//true
+	console.log([] == []);//false*/
+
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	function Person(){
+		this.name = 'zhangsan';
+		this.age = 18;
+		this.sex = 'nan';
+		this.sleep = function(){
+			alert('休息');
+		}
+	}
+
+	function Student(){
+		this.classes = 'wuif1707-1';
+		this.number = 170122;
+		this.study = function(){
+			alert('学习');
+		}
+	}	
+	Student.prototype/*构造函数的原型对象*/ = new Person();
+	let zhangsan = new Person();
+	let lisi = new Student();
+	//构造函数和原型对象中都可以添加方法 两个中都有相同的方法优先考虑的是构造函数中的方法，先访问自己里面构造函数，如果没有访问自己原型对象，自己本身没有的话，先访问父本的构造函数如果没有再访问父本中的原型对象
+	console.log(lisi);
+	console.log(lisi.__proto__ == Student.prototype);//true
+	console.log(Student.prototype.__proto__ == Person.prototype);//true
+	console.log(Person.prototype.__proto__ == Object.prototype);//true
+	console.log(Object.prototype.__proto__ == null);//true
+</script>
