@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	/*谁  什么*/
+	/*function Student(name,age,sex){
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+		this.say = function(){
+			alert(1);
+		}
+	}
+	let zhangsan = new Student('zhangsan',19,'男');
+	let lisi = new Student('lisi',20,'男');
+	zhangsan.classes = 'wuif1707';
+	lisi.study = function(){
+		alert('学习');
+	}
+	console.log(zhangsan);
+	console.log(lisi);*/
+</script>
+
+<script>
+    //构造函数   ==    类
+	/*function iphone(brand,color,price,memory,size,system){
+		this.brand = brand;
+		this.color = color;
+		this.price = price;
+		this.memory = memory;
+		this.size = size;
+		this.system = system;
+		this.calls = function(){
+			alert('打电话');
+		}
+		this.msg= function(){
+			alert('发短信');
+		}
+		this.music = function(){
+			alert('听音乐');
+		}
+	}
+	let iPhone1 = new iphone('iPhone8','red',6000,'128G',6.0,'ios');
+	let iPhone2 = new iphone('iPhone8','white',6500,'128G',6.3,'ios');
+	iPhone1.fit = function(){
+		console.log('女生');
+	}
+	alert(iPhone1.name);//undefined
+	//alert(iPhone1.tv());//报错
+	console.log(iPhone1);
+	console.log(iPhone1.music());
+	console.log(iPhone2);
+
+	//遍历函数（for in）
+	alert(iPhone1.size);
+	alert(iPhone1['size']);
+	iPhone1['calls']();//访问方法
+	for(let i in iPhone1){
+		console.log(i);
+	}
+	for(let i in iPhone1){
+		//i 相当于是一个属性名
+		console.log(`${i}---${iPhone1[i]}`);
+	}
+
+	let iPhone8 = {
+		brand : 'iPhone8',
+		color :  'red',
+		price : '5000',
+		memory : '128G',
+		size : '6.0',
+		system : 'ios',
+		calls : function(){
+			alert('打电话');
+		},
+		msg : function(){
+			alert('发短信');
+		},
+		music : function(){
+			alert('听音乐');
+		}
+	}
+	iPhone8.music();
+	console.log(iPhone8);*/
+</script>
+
+<script>
+	/*let wangwu = {};
+	wangwu.name = 'wangwu';
+	wangwu.age = 18;
+	wangwu.sex = '男';
+	console.log(wangwu);
+	console.log(wangwu.constructor);*/
+	/*let wangwu = {
+		'age' : 18,  //,必须加上
+		'sex' : '男',
+		'name' : 'wangwu',
+		say : function(){
+			alert(1);
+		}
+	}
+	wangwu.say();
+	console.log(wangwu);*/
+</script>
+
+<script>
+	/*let zhaoliu = new Object();
+	zhaoliu.age = 18;
+	zhaoliu.name = 'zhaoliu';
+	zhaoliu.say = function(){
+		console.log('说话');
+	}
+	console.log(zhaoliu);*/
+</script>
+
+<script>
+	/*class Student{
+		constructor(){
+			this.name = 'zhangsan';
+			this.age = 18;
+			this.say = function(){
+				alert(1);
+			}
+		};
+		study(){  //方法名
+			alert('学习');
+	    };
+	    play(){
+	    	alert('玩');
+	    };
+	}
+	
+	let zhang = new Student();
+	console.log(zhang);*/
+</script>
+
+<script>
+    //构造函数的传参
+	class Iphone{
+		constructor(brand,size,system,memory){
+			this[1] = 'a';
+			this[2] = 'b';
+			this.brand = brand;
+			this.size = size;
+			this.system = system;
+			this.memory = memory;
+			//方法调用属性
+			this.calls = function(value){
+				alert(value);
+			}
+		};
+		msg(){
+			alert(this.brand);
+		};
+		music(values){
+			this.calls(values);
+		};
+	}
+	let iPhone9 = new Iphone('iphone8','6.0','ios','128G');
+	iPhone9.msg();
+	iPhone9.calls('打电话');
+	iPhone9.music('听音乐');
+	console.log(iPhone9);
+	console.log(iPhone9[1]);
+	console.log(iPhone9[2]);
+</script>

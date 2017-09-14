@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myArray</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+     
+	
+	//console.log(arr);
+
+
+	/*arr.push('x','y','z');
+	console.log(arr);
+	console.log(arr.indexOf('c'));
+	console.log(arr.lastIndexOf(3));
+	console.log(arr.includes(3));	
+	let result = arr.some(function(value){
+		return typeof value == 'number';
+	})
+	console.log(result);
+
+	let result1 = arr.every(function(value){
+		return typeof value == 'number';
+	})
+	console.log(result1);
+
+	let arr1 = new myArray(9,4,2,26,13);
+	let mapresult = arr1.map(function(value,index){
+	 	return value*index;
+	 })
+	console.log(mapresult);
+
+	let filterResult = arr1.filter(function(value){
+		return value%2 == 1;
+	})
+	console.log(filterResult);
+
+	console.log(arr.reverse());
+	
+	console.log(arr1.join());
+
+	let arr2 = new myArray(7,56,4,23);
+	console.log(arr2.sortdown());
+	console.log(arr2.sortup());
+	console.log(arr2.sort1('<'));
+
+	let arr3 = new myArray(1,2,undefined,4,3,undefined,6,undefined,undefined);
+	console.log(arr3.delNull());*/
+	
+	function myArray(){
+		for(let i = 0;i < arguments.length;i++){
+			this[i] = arguments[i];
+		}
+		this.length = arguments.length;
+	}
+
+	myArray.prototype = {
+		//添加数组元素
+		push : function(){
+			for(let i = 0;i<arguments.length;i++){
+				this[this.length] = arguments[i];
+				this.length++;
+			}
+		},
+
+		//返回数组中的某一元素第一次出现的位置
+		indexOf : function(value){
+			for(let i = 0;i<this.length;i++){
+				if(this[i] == value){
+					return i;
+				}
+			}
+			return -1;
+		},
+
+		//返回数组中的某一元素最后出现的位置
+		lastIndexOf : function(value){
+			for(let i = this.length-1;i > -1;i--){
+				if(this[i] == value){
+					return i;
+				}
+			}
+			return -1;
+		},
+
+		//include
+		includes : function(value){
+			for(let i = 0;i<this.length;i++){
+				if(this[i] == value){
+					return true;
+				}
+			}
+			return false;
+		},
+
+		//当数组中存在数组元素为number返回true
+		some : function(fn){
+			for(let i = 0;i<this.length;i++){
+				if(fn(this[i])){
+					return true;
+				}
+			}
+			return false;
+		},
+
+		//当数组中的所有元素为number返回true
+		every : function(fn){
+			for(let i = 0;i<this.length;i++){
+				if(!fn(this[i])){
+					return false;
+				}
+			}
+			return true;
+		},
+
+		//映射每个数组元素扩大3倍
+		map : function(fn){
+			let newarr = new myArray();
+			for(let i = 0;i<this.length;i++){
+				newarr.push(fn(this[i],i));
+			}
+			return newarr;
+		},
+
+		//筛选数组中的奇数
+		filter : function(fn){
+			let newarr = [];
+			for(let i = 0;i < this.length;i++){
+				if(fn(this[i])){
+					newarr[newarr.length] = this[i];
+				}
+			}
+			return newarr;
+		},
+
+		//将数组进行反转
+		reverse : function(){
+			let newarr = [];
+			for(let i = this.length-1; i > -1;i--){
+				newarr[newarr.length] = this[i];
+			}
+			return newarr;
+		},
+
+		//将数组转化成数字类型
+		join : function(str){
+			str = str == undefined? '+':str;
+			var result='';
+			for(let i=0;i < this.length-1;i++){  
+				result += this[i]+str;
+			}
+			if(i = this.length-1){
+				result += this[i];
+			}
+			return result;
+		},
+
+		//对数组进行排序
+		sort1 : function(type){
+			type = type == undefined? '>' :type;
+			if(type == '<'){
+				this.sortdown();
+			}
+			else if(type == '>'){
+				this.sortup();
+			}
+			return this;
+		},
+		//对数组进行降序排序
+		sortdown : function(){
+			for(let i = 0;i < this.length;i++){
+				for(let j = i+1;j < this.length;j++){
+					if(this[i] < this[j]){
+						temp = this[i];
+						this[i] = this[j];
+						this[j] = temp;
+					}
+				}
+			}
+			return this;
+		},
+		//对数组进行升序排序
+		sortup : function(){
+			for(let i = 0;i < this.length;i++){
+				for(let j = i+1;j < this.length;j++){
+					if(this[i] > this[j]){
+						temp = this[i];
+						this[i] = this[j];
+						this[j] = temp;
+					}
+				}
+			}
+			return this;
+		},
+
+		//数组去掉空的地方
+		delNull : function(){
+			let newarr = new myArray();
+			for(let i = 0;i < this.length;i ++){
+				if(this[i] != undefined){
+					newarr.push(this[i]);
+				}
+			}
+			return newarr;
+		},
+		
+	}
+	let arr = new myArray('a','b','c','d','e',1,2,3,4);
+	arr.push('x','y','z');
+	console.log(arr);
+		
+
+	/*indexof//第一次出现的位置    lastIndexof  includes  reverse//反转   join  sort  'some  every  map  filter' */
+
+</script>
