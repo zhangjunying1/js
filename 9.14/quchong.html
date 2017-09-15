@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+ 	/*
+ 	数组去重
+ 	 */
+	
+	// function lost1(arr){
+	// 	let newarr = [];
+	// 	for(let i = 0; i < arr.length; i++){
+	// 		if(!newarr.includes(arr[i])){
+	// 			newarr.push(arr[i]);
+	// 		}
+	// 	}
+	// 	return 	newarr;	
+	// }
+	// console.log(lost1(arr));
+
+	/*function lost2(){
+		let newarr = [];
+		let newarr1 = [];
+		for(let i = 0; i < arr.length ; i++){
+			if(arr.indexOf(arr[i]) == arr.lastIndexOf(arr[i])){
+				newarr.push(arr[i]);
+			}
+			else{
+				newarr1.push(arr[i]);
+			}
+		}
+		return newarr.concat(newarr1);
+	}
+	console.log(lost2());*/
+
+	// function lost3(arr){
+	// 	let newarr = [];
+	// 	for(let i = 0; i< arr.length; i++){
+	// 		let flag = true;
+	// 		for(let j = i+1; j < arr.length; j++){
+	// 			if(arr[i] == arr[j]){
+	// 				flag = false;
+	// 				break;
+	// 			}
+	// 		}
+	// 		if(flag){
+	// 			newarr.push(arr[i]);
+	// 		}
+	// 	}
+	// 	return newarr;
+	// }
+	//console.log(lost3(arr));
+
+	Array.prototype.lost = function(){
+		let newarr = [];
+		for(let i = 0; i< this.length; i++){
+			let flag = true;
+			for(let j = i+1; j < this.length; j++){
+				if(this[i] == this[j]){
+					flag = false;
+					break;
+				}
+			}
+			if(flag){
+				newarr.push(this[i]);
+			}
+		}
+		return newarr;
+	}
+	let arr = [1,2,3,5,3,2,13,8,3,3];
+	console.log(arr.lost());
+</script>
+<script>
+	console.log(Math.round(10.5))//11
+	console.log(Math.round(10.4))//10
+	console.log(Math.round(-10.5))//-10
+	console.log(Math.round(-10.32))//-10
+
+	console.log(Math.ceil(10.5))//11
+	console.log(Math.ceil(10.4))//11
+	console.log(Math.ceil(-5.5))//-5
+	console.log(Math.ceil(-5.3))//-5
+
+	console.log(Math.floor(5.3))//5
+	console.log(Math.floor(10.8))//10
+	console.log(Math.floor(-5.3))//-6
+	console.log(Math.floor(-10.8))//-11
+
+	// for(let i = 0;i < 10;i++){
+	// 	console.log(Math.random()*10);
+	// }
+
+	// for(let i = 0;i < 10;i++){	
+	// console.log(Math.random()*10+10);
+ //  	}
+
+  	console.log(Math.pow(2,10));//1024  2的10次幂
+  	console.log(Math.sqrt(4));//2   开根号
+
+  	
+
+</script>
+
+<script>
+	/*function color(){
+		let str = `rgb(`
+		for(let i = 0;i <3;i++){
+			let num = Math.round(Math.random()*255);
+			str += num + ',';
+		}
+		str = str.slice(0,-1);
+		str+=')';
+		return str;
+	}
+
+	let box = document.getElementById('box');//获取box
+	box.onmouseover = function(){
+		box.style.background=color();
+	}*/
+	
+</script>
+

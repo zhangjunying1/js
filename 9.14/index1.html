@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	//随机取数组中的num个不重复的元素
+  	let arr = ['a','b','c','d','e'];
+  	function getarr(arr,num){
+  		let newarr = [];
+  		while(newarr.length < num){
+  			let i = Math.floor(Math.random()*arr.length);
+  			if(!newarr.includes(arr[i])){
+  				newarr.push(arr[i]);
+  			}	
+  		}
+  		return newarr;
+  	}
+  	console.log(getarr(arr,2));
+
+  	function randarr(arr,num){
+  		let newarr = [];
+  		for(let j = 0;j < num;j++){
+  			let i = Math.floor(Math.random()*arr.length);
+  			/*if(newarr.includes(arr[i])){
+  				j--;
+  			}	
+  			else{
+  				newarr.push(arr[i]);
+  			}*/
+
+  			while(newarr.includes(arr[i])){
+  				i = Math.floor(Math.random()*arr.length);		
+  			}
+  			newarr.push(arr[i]);
+  		}
+  		return newarr;
+  	}
+  	console.log(randarr(arr,3)); 	
+</script>

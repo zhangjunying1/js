@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	let arr = [1,2,3,4,23,108,56,43];
+	// let arr1 = ['a','b','c'];
+	// let arr2 = ['x','y','z'];
+	// let newarr = arr.concat(arr1,arr2);
+	// console.log(newarr);
+	// arr.push(...arr1);
+	// console.log(arr);
+
+	// arr.sort(function(a,b){
+	// 	return a - b < 0;
+	// })
+	// console.log(arr);
+	/*some every map filter  forEach*/
+
+	let sum = 0;
+	arr.forEach(function(value,index,obj){
+		sum += value;
+	})//forEach没有返回值
+
+	console.log(sum);
+
+	// let sum = 0;
+	// let result = arr.forEach((value) => sum += value);//forEach没有返回值,箭头函数使函数更加简单：没有arguments 不能作为构造函数实例化对象
+	//箭头函数返回json函数
+	// let fn = (num) =>({name:'zhangsan',age:18})
+	// return fn();
+
+	// let qq = (num) =>{return {name:'zhangsan',age:18}}
+	// console.log(result);
+	// console.log(qq);
+
+	// let arr0 = [];
+	// let result1 = arr.forEach(function(value,index){
+	// 	if(value%2 == 0){
+	// 		arr.push()
+	// 	}
+	// })//forEach没有返回值
+	// console.log(result1);
+
+	// let newarr = arr.filter(function(value,index,obj){
+	// 	return value%2 == 0;
+	// })
+	// console.log(newarr);
+
+	// let map = arr.map(function(value,index,obj){
+	// 	return value + index;
+	// })
+	// console.log(map);
+	// let map = arr.map((value,index) => value + index);
+	// console.log(map);
+
+	// let i = 'a';//全局作用域
+	// for(let i = 0; i < arr.length; i++/*独立作用域*/){
+	// 	let i = 10;//块级作用域
+	// 	console.log(i);
+	// }
+	// arr.length = 0;
+	// console.log(arr);
+
+	// //数组的声明
+	// let arr1 = new Array(5);//构造函数只有一个参数并且还是数字，那它代表的是数组的长度
+	// let arr2 = Array.of(5);
+	// let arr3 = Array.of(5,3,4);
+	// console.log(arr2);
+	// console.log(arr3);
+
+	// console.log(Array.constructor);
+
+</script>
