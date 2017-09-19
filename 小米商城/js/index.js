@@ -53,7 +53,7 @@ window.onload = function(){
 		t=setInterval(move,3000);
 	}
 
-	//点击轮波改变banner图片
+	//点击轮播改变banner图片
 	for(let i=0;i<smalls.length;i++){
 		smalls[i].onclick=function(){
 			for(let j=0;j<imgli.length;j++){
